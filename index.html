@@ -1,0 +1,263 @@
+tion-Form-2368966/
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Control Info Creator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, label { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: #666;
+      line-height: 22px;
+      }
+      legend { 
+      color: #fff;
+      background-color: #095484;
+      padding: 3px 5px;
+      font-size: 20px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 36px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0  #095484; 
+      }
+      .banner {
+      position: relative;
+      height: 200px;
+      background-image: url("/uploads/media/default/0001/02/19ea6ba00def11fb8f5113a4d7555a97bd58ce3d.jpeg");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.6); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      textarea {
+        margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      height: 100px;
+      } 
+      textarea {
+        width: calc(100% - 10px);
+      padding: 5px;
+      } 
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:#095484;
+      }
+      .item input:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      color:#095484;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #095484;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #4286f4;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input,.name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form id="form" >
+      <div class="banner">
+        <h1>Create New Instance Template</h1>
+      </div>
+      <hr/>
+      <fieldset>
+        <legend>New Instance Form</legend>
+        <div class="item">
+            <label for="summary">One Line Summary of Request<span>*</span></label>
+            <textarea></textarea>
+          </div>   
+        <div class="item">
+          <label for="data-center">Data Center<span>*</span></label>
+          <select name="data-center" id="data-center">
+            <option value="DFW">DFW (US)</option>
+            <option value="FRA">FRA (EU)</option>
+          </select>
+        </div>
+        <div class="item">
+          <label for="environment">Environment<span>*</span></label>
+          <select name="environment" id="environment">
+            <option value="PRD">PRD (Production Customer Instances)</option>
+            <option value="SBX">SBX (Customer Sandbox Instances/QA)</option>
+            <option value="DMO">DMO (Instances Used for Demos by Sales Engineers)</option> 
+            <option value="SUP">SUP (Internal Support Instances)</option>
+            <option value="PERSONAL">PERSONAL (Personal Instances Used by Anybody Outside of Support)</option>
+            <option value="POC">POC (Proof of Concept Instances Used by Sales Engineers)</option>
+            <option value="AD">AD (Advanced Demo Instances Used by Sales Engineers)</option>
+            <option value="PARTNER">PARTNER (Any Instance Utilized by a Partner Contact)</option>
+            <option value="NIC">NIC (Any NAVEX Integration Cloud Instance)</option>
+            <option value="TST">TST (Any Test Instance Set Up for Customer Research)</option>
+          </select>
+        </div>    
+        <div class="item">
+            <label for="customer-url">Customer URL<span>*</span></label>
+            <input id="customer-url" type="text" name="text" placeholder="https://customer-url.keylightgrc.com/" required/>
+          </div>   
+          <div class="item">
+            <label for="customer-name">Customer Name<span>*</span></label>
+            <input id="customer-name" type="text" name="text" placeholder="" required/>
+          </div>   
+          <div class="item">
+            <label for="source">Source Instance/Database<span>*</span></label>
+            <input id="source" type="text" name="text" placeholder="" required/>
+          </div>   
+          <div class="item">
+            <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
+            <select id="purge-nvd" type="text" name="purge-nvd" placeholder="" required>
+                <option value="Yes">Yes</option>
+                <option value="Yes">No</option>
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="address">Edition Type<span>*</span></label>
+            <select id="edition-type" type="text" name="purge-nvd" placeholder="" required>
+                <option value="Enterprise">Enterprise</option>
+                <option value="Standard">Standard</option>
+                <option value="Point Solution">Point Solution</option> 
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="due-date">Requested Due Date<span>*</span></label>
+            <input id="due-date" type="text" name="text" placeholder="MM/DD/YYYY" required/>
+          </div>   
+          <div class="item">
+            <label for="priority">Priority/Urgency<span>*</span></label>
+            <select id="priority" type="text" name="priority" placeholder="" required>
+                <option value="Enterprise">Low</option>
+                <option value="Standard">Mediuum</option>
+                <option value="Point Solution">High</option> 
+                <option value="Point Solution">Critical</option> 
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="escalated">Is the Request Escalated?<span>*</span></label>
+            <select id="escalated" type="text" name="escalated" placeholder="" required>
+                <option value="Yes">Yes</option>
+                <option value="Yes">No</option>
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="approved">Change Control Approved By?<span>*</span></label>
+            <input id="approved" type="text" name="approved" placeholder="Leave Blank for Initial Review" required/>
+          </div>   
+          <div class="item">
+            <label for="explanation">Explanation of Request<span>*</span></label>
+            <textarea placeholder="What is the specific request and who are we setting the instance up for? Anything extra or unique about this request?"></textarea>
+          </div>   
+      </fieldset> 
+      <input id="form" style="cursor:pointer; color:#4286f4" type="submit" value="Submit">
+    </form>
+    </div>
+    <div id="result-div">
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
