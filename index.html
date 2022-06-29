@@ -1,4 +1,4 @@
-tion-Form-2368966/
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +16,7 @@ tion-Form-2368966/
       font-family: Roboto, Arial, sans-serif;
       font-size: 13px;
       color: #666;
-      line-height: 22px;
+      /* line-height: 22px; */
       }
       legend { 
       color: #fff;
@@ -30,13 +30,41 @@ tion-Form-2368966/
       font-size: 36px;
       color: #fff;
       z-index: 2;
+      } 
+      h2 {
+        font-size: 13px;
+      }
+      .field{
+        text-align: center;
+        font-size: 13px;
+
+      } 
+      .description{
+        display: inline; 
+        font-size: 13px;
+      }
+      #summary-field{
+        font-size: 13px;
+        font-weight: bolder;
+      } 
+      #clipboard {
+        width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0  #095484; 
+      visibility: hidden;
+      }
+      #description-field{
+        font-size: 13px;
       }
       .testbox {
       display: flex;
       justify-content: center;
       align-items: center;
       height: inherit;
-      padding: 20px;
+      padding: 20px; 
+      visibility: visible;
       }
       form {
       width: 100%;
@@ -45,10 +73,25 @@ tion-Form-2368966/
       background: #fff;
       box-shadow: 0 0 20px 0  #095484; 
       }
+      #form-input{ 
+        font-size: large;
+        margin-left: 25%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        width: 50%;
+      padding: 5px;
+      border-radius: 6px;
+      box-shadow: 0 0 20px 0  #095484; 
+      }
+      #form-input:hover {
+        border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      background: #fff;
+      
+      }
       .banner {
       position: relative;
-      height: 200px;
-      background-image: url("/uploads/media/default/0001/02/19ea6ba00def11fb8f5113a4d7555a97bd58ce3d.jpeg");  
+      height: 200px; 
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -131,6 +174,7 @@ tion-Form-2368966/
       text-align: center;
       }
       button {
+        margin-top: 10px;
       width: 150px;
       padding: 10px;
       border: none;
@@ -172,18 +216,18 @@ tion-Form-2368966/
         <legend>New Instance Form</legend>
         <div class="item">
             <label for="summary">One Line Summary of Request<span>*</span></label>
-            <textarea></textarea>
+            <textarea name="Summary" id="summary"></textarea>
           </div>   
         <div class="item">
           <label for="data-center">Data Center<span>*</span></label>
-          <select name="data-center" id="data-center">
+          <select name="Data Center:" id="data-center">
             <option value="DFW">DFW (US)</option>
             <option value="FRA">FRA (EU)</option>
           </select>
         </div>
         <div class="item">
           <label for="environment">Environment<span>*</span></label>
-          <select name="environment" id="environment">
+          <select name="Environment:" id="environment">
             <option value="PRD">PRD (Production Customer Instances)</option>
             <option value="SBX">SBX (Customer Sandbox Instances/QA)</option>
             <option value="DMO">DMO (Instances Used for Demos by Sales Engineers)</option> 
@@ -198,26 +242,26 @@ tion-Form-2368966/
         </div>    
         <div class="item">
             <label for="customer-url">Customer URL<span>*</span></label>
-            <input id="customer-url" type="text" name="text" placeholder="https://customer-url.keylightgrc.com/" required/>
+            <input id="customer-url" type="text" name="Customer URL:" placeholder="https://customer-url.keylightgrc.com/" required/>
           </div>   
           <div class="item">
             <label for="customer-name">Customer Name<span>*</span></label>
-            <input id="customer-name" type="text" name="text" placeholder="" required/>
+            <input id="customer-name" type="text" name="Customer Name:" placeholder="" required/>
           </div>   
           <div class="item">
             <label for="source">Source Instance/Database<span>*</span></label>
-            <input id="source" type="text" name="text" placeholder="" required/>
+            <input id="source" type="text" name="Source Instance/Database:" placeholder="" required/>
           </div>   
           <div class="item">
             <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
-            <select id="purge-nvd" type="text" name="purge-nvd" placeholder="" required>
+            <select id="purge-nvd" type="text" name="Purge NVD Data?" placeholder="" required>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select> 
           </div>   
           <div class="item">
             <label for="address">Edition Type<span>*</span></label>
-            <select id="edition-type" type="text" name="purge-nvd" placeholder="" required>
+            <select id="edition-type" type="text" name="Edition Type:" placeholder="" required>
                 <option value="Enterprise">Enterprise</option>
                 <option value="Standard">Standard</option>
                 <option value="Point Solution">Point Solution</option> 
@@ -225,11 +269,11 @@ tion-Form-2368966/
           </div>   
           <div class="item">
             <label for="due-date">Requested Due Date<span>*</span></label>
-            <input id="due-date" type="text" name="text" placeholder="MM/DD/YYYY" required/>
+            <input id="due-date" type="text" name="Due Date:" placeholder="MM/DD/YYYY" required/>
           </div>   
           <div class="item">
             <label for="priority">Priority/Urgency<span>*</span></label>
-            <select id="priority" type="text" name="priority" placeholder="" required>
+            <select id="priority" type="text" name="Priority:" placeholder="" required>
                 <option value="Enterprise">Low</option>
                 <option value="Standard">Mediuum</option>
                 <option value="Point Solution">High</option> 
@@ -238,26 +282,34 @@ tion-Form-2368966/
           </div>   
           <div class="item">
             <label for="escalated">Is the Request Escalated?<span>*</span></label>
-            <select id="escalated" type="text" name="escalated" placeholder="" required>
+            <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select> 
           </div>   
           <div class="item">
-            <label for="approved">Change Control Approved By?<span>*</span></label>
-            <input id="approved" type="text" name="approved" placeholder="Leave Blank for Initial Review" required/>
+            <label for="approved">Change Control Approved By?</label>
+            <input id="approved" type="text" name="Change Control Approved By:" placeholder="Leave Blank for Initial Review" />
           </div>   
           <div class="item">
             <label for="explanation">Explanation of Request<span>*</span></label>
-            <textarea placeholder="What is the specific request and who are we setting the instance up for? Anything extra or unique about this request?"></textarea>
+            <textarea name="Explanation of Request:" id="explanation" placeholder="What is the specific request and who are we setting the instance up for? Anything extra or unique about this request?"></textarea>
           </div>   
       </fieldset> 
-      <input id="form" style="cursor:pointer; color:#4286f4" type="submit" value="Submit">
+      <input id="form-input" style="cursor:pointer; color:#4286f4; text-align: center; height: 100px;" type="submit" value="Enter">
     </form>
     </div>
-    <div id="result-div">
-
+    <div id="clipboard">
+    <div id="summary-submission" style="text-align: center; visibility: hidden;">
+    <h2 class="field" id="summary-field" style="font-size: 20px; font-weight: 800; visibility: hidden;">- Summary Field -</h2> 
     </div>
+    <div id="submission" style="text-align:center; visibility: hidden;">
+        <h2 class="field"  id="description-field" style="font-size: 20px;  font-weight: 800; visibility: hidden;"> -Description Field -</h2> 
+    </div>
+    <div id="clear" style="text-align: center;">
+        <button id="clear-button" style="visibility: hidden;">Clear</button>
+    </div>
+</div >
     <script src="script.js"></script>
   </body>
-</html>
+</html
