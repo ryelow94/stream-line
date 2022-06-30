@@ -1,13 +1,14 @@
 var button = document.createElement("button")
 var clearButton = document.getElementById("clear-button")
 let cleared = false;
-var arr = []
+let arr = []
     var summaryField = document.getElementById("summary-submission")
      var sumh2 = document.getElementById("summary-field") 
      var desh2 = document.getElementById("description-field")
      var field = document.getElementById("submission") 
      
 function handleSubmit(event){
+    arr = []
     clearButton.style.visibility = 'visible'
     event.preventDefault()
     console.log(event)
@@ -68,8 +69,7 @@ function handleSubmit(event){
         num.appendChild(element)
         num=num+"a"
      } 
-    infoForm.reset()
-
+     infoForm.reset()
     var clip = document.getElementById("clipboard")
     clip.style.lineHeight="0.5"
    var enter = document.getElementById("form-input") 
@@ -97,10 +97,9 @@ clearButton.onclick = () => {
         newInput.style.textAlign="center"
         newInput.style.height="100px"
        var fieldSet = document.getElementById("fieldSet")
-       if(cleared===true) {
         fieldSet.after(newInput) 
-       } 
        clearButton.style.visibility="hidden"
+       console.log(arr)
 }
 button.onclick = async () => {
     var clip = document.getElementById("clipboard")
