@@ -1,5 +1,5 @@
 var button = document.createElement("button")
-var clearButton = document.getElementById("clear")
+var clearButton = document.getElementById("clear-button")
 let cleared = false;
 function handleSubmit(event){
     event.preventDefault()
@@ -82,9 +82,13 @@ clearButton.onclick = () => {
 }
 button.onclick = async () => {
     var clip = document.getElementById("clipboard")
+    button.innerText=""
+    clearButton.innerText=""
     var clipText = clip.innerText
     console.log(clipText)
     await navigator.clipboard.writeText(clipText)
+    button.innerText="Copy to Clipboard"
+    clearButton.innerText="Clear"
 } 
 var infoForm = document.getElementById("form")
 infoForm.addEventListener("submit", handleSubmit)
