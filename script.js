@@ -1,11 +1,17 @@
 var button = document.createElement("button")
 var clearButton = document.getElementById("clear-button")
 let cleared = false;
+var arr = []
+    var summaryField = document.getElementById("summary-submission")
+     var sumh2 = document.getElementById("summary-field") 
+     var desh2 = document.getElementById("description-field")
+     var field = document.getElementById("submission") 
+     
 function handleSubmit(event){
+    clearButton.style.visibility = 'visible'
     event.preventDefault()
     console.log(event)
 
-    var arr = []
     var summary = document.createElement("h3")
     var dataCenter = document.createElement("h3") 
     var environment = document.createElement("h3")
@@ -38,21 +44,13 @@ function handleSubmit(event){
      explanation.textContent = event.target[13].value  
      button.textContent = "Copy to Clipboard"
      
-
-
-     var summaryField = document.getElementById("summary-submission")
-     var sumh2 = document.getElementById("summary-field") 
-     var desh2 = document.getElementById("description-field")
-     var field = document.getElementById("submission") 
-     
+    summary.classList="num"
 
      sumh2.style.visibility = 'visible'
      desh2.style.visibility = "visible"
      field.style.visibility = "visible" 
      summaryField.style.visibility = "visible"
      clipboard.style.visibility = "visible" 
-
-
 
 
      summaryField.appendChild(summary)
@@ -62,6 +60,7 @@ function handleSubmit(event){
         let num = "a"
        num = document.createElement("h3") 
        num.style.fontWeight= "700"
+       num.classList="num"
        element.classList = "description"
        element.style.fontWeight = "400"
       num.textContent = event.target[i+2].name + " " 
@@ -70,15 +69,38 @@ function handleSubmit(event){
         num=num+"a"
      } 
     infoForm.reset()
-    var clearButton = document.getElementById("clear-button")
-    clearButton.style.visibility = 'visible'
 
     var clip = document.getElementById("clipboard")
     clip.style.lineHeight="0.5"
+   var enter = document.getElementById("form-input") 
+   enter.remove()
 }
 clearButton.onclick = () => {
-    var clip = document.getElementById("clipboard")
-        clip.innerText = "" 
+        cleared= !cleared
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            element.remove()
+        } 
+        var removeNum = document.querySelectorAll(".num")
+        removeNum.forEach(el => el.remove())
+ 
+        sumh2.style.visibility = 'hidden'
+        desh2.style.visibility = "hidden"
+        summaryField.style.visibility="hidden"
+
+        var newInput = document.createElement("input")
+        newInput.setAttribute("id", "form-input")
+        newInput.setAttribute("type", "submit")
+        newInput.setAttribute("value", "Enter")
+        newInput.style.cursor="pointer"
+        newInput.style.color="#4286f4"
+        newInput.style.textAlign="center"
+        newInput.style.height="100px"
+       var fieldSet = document.getElementById("fieldSet")
+       if(cleared===true) {
+        fieldSet.after(newInput) 
+       } 
+       clearButton.style.visibility="hidden"
 }
 button.onclick = async () => {
     var clip = document.getElementById("clipboard")
