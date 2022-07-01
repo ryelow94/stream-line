@@ -13,7 +13,7 @@ function handleSubmit(event){
     console.log(event)
     var myDate = new Date()
     console.log(myDate)
-    var pattern = /(https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/ 
+    var pattern = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi 
     var date_regex = /^\d{2}\/\d{2}\/\d{4}$/
     if(!pattern.test(event.target[4].value)){
         alert("The Customer URL is invalid, please ensure it begins with https://")
