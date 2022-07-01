@@ -9,9 +9,23 @@ let arr = []
      
 function handleSubmit(event){
     arr = []
-    clearButton.style.visibility = 'visible'
     event.preventDefault()
     console.log(event)
+    var myDate = new Date()
+    console.log(myDate)
+    var pattern = /(https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/ 
+    var date_regex = /^\d{2}\/\d{2}\/\d{4}$/
+    if(!pattern.test(event.target[4].value)){
+        alert("The Customer URL is invalid, please ensure it begins with https://")
+        return;
+    }
+    if(!date_regex.test(event.target[9].value)){
+        alert("The Requested Due Date is not in the correct format, please ensure it is: MM/DD/YYYY")
+        return;
+    }
+
+    alert("Please review the confluence documentation to ensure all required details are included before continuing.")
+    clearButton.style.visibility = 'visible'
 
     var summary = document.createElement("h3")
     var dataCenter = document.createElement("h3") 
@@ -107,7 +121,7 @@ button.onclick = async () => {
     clearButton.innerText=""
     var clipText = clip.innerText
     console.log(clipText)
-    await navigator.clipboard.writeText(clipText)
+    await navigator.clipboard.writeText(clipText) 
     button.innerText="Copy to Clipboard"
     clearButton.innerText="Clear"
 } 
