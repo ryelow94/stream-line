@@ -237,14 +237,16 @@
           </div>   
         <div class="item">
           <label for="data-center">Data Center<span>*</span></label>
-          <select name="Data Center:" id="data-center">
+          <select name="Data Center:" id="data-center"> 
+            <option value="none" selected disabled hidden>Select an Option</option>
             <option value="DFW">DFW (US)</option>
             <option value="FRA">FRA (EU)</option>
           </select>
         </div>
         <div class="item">
           <label for="environment">Environment<span>*</span></label>
-          <select name="Environment:" id="environment">
+          <select name="Environment:" id="environment"> 
+            <option value="none" selected disabled hidden>Select an Option</option>
             <option value="PRD">PRD (Production Customer Instances)</option>
             <option value="SBX">SBX (Customer Sandbox Instances/QA)</option>
             <option value="DMO">DMO (Instances Used for Demos by Sales Engineers)</option> 
@@ -271,14 +273,16 @@
           </div>   
           <div class="item">
             <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
-            <select id="purge-nvd" type="text" name="Purge NVD Data?" placeholder="" required>
+            <select id="purge-nvd" type="text" name="Purge NVD Data?" placeholder="" required> 
+                <option value="none" selected disabled hidden>Select an Option</option>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select> 
           </div>   
           <div class="item">
             <label for="address">Edition Type<span>*</span></label>
-            <select id="edition-type" type="text" name="Edition Type:" placeholder="" required>
+            <select id="edition-type" type="text" name="Edition Type:" placeholder="" required> 
+                <option value="none" selected disabled hidden>Select an Option</option>
                 <option value="Enterprise">Enterprise</option>
                 <option value="Standard">Standard</option>
                 <option value="Point Solution">Point Solution</option> 
@@ -290,7 +294,8 @@
           </div>   
           <div class="item">
             <label for="priority">Priority/Urgency<span>*</span></label>
-            <select id="priority" type="text" name="Priority:" placeholder="" required>
+            <select id="priority" type="text" name="Priority:" placeholder="" required> 
+                <option value="none" selected disabled hidden>Select an Option</option>
                 <option value="Enterprise">Low</option>
                 <option value="Standard">Mediuum</option>
                 <option value="Point Solution">High</option> 
@@ -299,7 +304,8 @@
           </div>   
           <div class="item">
             <label for="escalated">Is the Request Escalated?<span>*</span></label>
-            <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required>
+            <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required> 
+                <option value="none" selected disabled hidden>Select an Option</option>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select> 
