@@ -49,12 +49,18 @@
       #clipboard {
       margin-left: 20px;
       margin-right: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 80px;
       padding: 20px;
       border-radius: 6px;
       background: #fff;
       box-shadow: 0 0 20px 0  #095484; 
       visibility: hidden;
+      }
+      #clip-div{
+        padding: 20px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: rgb(192, 192, 192);
       }
       #description-field{
         font-size: 13px;
@@ -312,6 +318,7 @@
     </div>
     <div class="testbox" style="display: flex; justify-content:center; align-items:center"> <a target= "_blank" href="https://confluence.navexglobal.com/display/SUP/New+Instance+Creation">--Link to Confluence Documentation--</a></div>
     <div id="clipboard">
+        <div id="clip-div">
     <div id="summary-submission" style="text-align: center; visibility: hidden;">
     <h2 class="field" id="summary-field" style="font-size: 20px; font-weight: 800; visibility: hidden;">- Summary Field -</h2> 
     </div>
@@ -321,7 +328,11 @@
     <div id="clear" style="text-align: center;">
         <button id="clear-button" style="visibility: hidden;">Clear</button>
     </div>
+</div>
 </div >
+<div style="display:flex; justify-content:center; align-items:center">
+    <img style="margin-bottom: 20px; width:10%; height:10%" src="/lp_logo.svg">
+</div>
     <script src="script.js"></script>
   </body>
 </html

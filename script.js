@@ -10,9 +10,6 @@ var field = document.getElementById("submission");
 function handleSubmit(event) {
   arr = [];
   event.preventDefault();
-  console.log(event);
-  var myDate = new Date();
-  console.log(myDate);
   var pattern =
     /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
   var date_regex = /^\d{2}\/\d{2}\/\d{4}$/;
@@ -131,6 +128,7 @@ clearButton.onclick = () => {
   fieldSet.after(newInput);
   clearButton.style.visibility = "hidden";
   console.log(arr);
+  clipboard.style.visibility="hidden"
 };
 button.onclick = async () => {
   var clip = document.getElementById("clipboard");
