@@ -233,20 +233,20 @@
         <legend>New Instance Form</legend>
         <div class="item">
             <label for="summary">One Line Summary of Request<span>*</span></label>
-            <textarea name="Summary" id="summary"></textarea>
+            <textarea name="Summary" id="summary" required></textarea>
           </div>   
         <div class="item">
           <label for="data-center">Data Center<span>*</span></label>
-          <select name="Data Center:" id="data-center"> 
-            <option value="none" selected disabled hidden>Select an Option</option>
+          <select name="Data Center:" id="data-center" required> 
+            <option value="" selected disabled hidden>Select an Option</option>
             <option value="DFW">DFW (US)</option>
             <option value="FRA">FRA (EU)</option>
           </select>
         </div>
         <div class="item">
           <label for="environment">Environment<span>*</span></label>
-          <select name="Environment:" id="environment"> 
-            <option value="none" selected disabled hidden>Select an Option</option>
+          <select name="Environment:" id="environment" required> 
+            <option value="" selected disabled hidden>Select an Option</option>
             <option value="PRD">PRD (Production Customer Instances)</option>
             <option value="SBX">SBX (Customer Sandbox Instances/QA)</option>
             <option value="DMO">DMO (Instances Used for Demos by Sales Engineers)</option> 
@@ -274,7 +274,7 @@
           <div class="item">
             <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
             <select id="purge-nvd" type="text" name="Purge NVD Data?" placeholder="" required> 
-                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="" selected disabled hidden>Select an Option</option>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select> 
@@ -282,7 +282,7 @@
           <div class="item">
             <label for="address">Edition Type<span>*</span></label>
             <select id="edition-type" type="text" name="Edition Type:" placeholder="" required> 
-                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="" selected disabled hidden>Select an Option</option>
                 <option value="Enterprise">Enterprise</option>
                 <option value="Standard">Standard</option>
                 <option value="Point Solution">Point Solution</option> 
@@ -295,7 +295,7 @@
           <div class="item">
             <label for="priority">Priority/Urgency<span>*</span></label>
             <select id="priority" type="text" name="Priority:" placeholder="" required> 
-                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="" selected disabled hidden>Select an Option</option>
                 <option value="Enterprise">Low</option>
                 <option value="Standard">Mediuum</option>
                 <option value="Point Solution">High</option> 
@@ -305,7 +305,7 @@
           <div class="item">
             <label for="escalated">Is the Request Escalated?<span>*</span></label>
             <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required> 
-                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="" selected disabled hidden>Select an Option</option>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select> 
@@ -316,7 +316,7 @@
           </div>   
           <div class="item">
             <label for="explanation">Explanation of Request<span>*</span></label>
-            <textarea name="Explanation of Request:" id="explanation" placeholder="What is the specific request and who are we setting the instance up for? Anything extra or unique about this request?"></textarea>
+            <textarea name="Explanation of Request:" id="explanation" placeholder="What is the specific request and who are we setting the instance up for? Anything extra or unique about this request?" required></textarea>
           </div>   
       </fieldset> 
       <input id="form-input" style="cursor:pointer;color: white; text-align: center; height: 100px;" type="submit" value="Enter">
@@ -339,6 +339,6 @@
 <div style="display:flex; justify-content:center; align-items:center">
     
 </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
   </body>
 </html

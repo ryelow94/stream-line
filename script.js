@@ -138,7 +138,10 @@ button.onclick = async () => {
   console.log(clipText);
   await navigator.clipboard.writeText(clipText);
   button.innerText = "Copy to Clipboard";
-  clearButton.innerText = "Clear";
+  clearButton.innerText = "Clear"; 
 };
+
+ 
+
 var infoForm = document.getElementById("form");
 infoForm.addEventListener("submit", handleSubmit);
