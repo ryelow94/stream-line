@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Control</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, label, select { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: #666;
+      /* line-height: 22px; */
+      }
+      legend { 
+      color: #fff;
+      background-color: #095484;
+      box-shadow: 0 0 6px 0 #095484;
+      padding: 3px 5px;
+      font-size: 20px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 36px;
+      color: #fff;
+      z-index: 2;
+      } 
+      h2 {
+        font-size: 13px;
+      }
+      .field{
+        text-align: center;
+        font-size: 13px;
+
+      } 
+      .description{
+        display: inline; 
+        font-size: 13px;
+      }
+      #summary-field{
+        font-size: 13px;
+        font-weight: bolder;
+      } 
+      #clipboard {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 80px;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0  #095484; 
+      visibility: hidden;
+      }
+      #clip-div{
+        padding: 20px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: rgb(192, 192, 192);
+      }
+      #description-field{
+        font-size: 13px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px; 
+      visibility: visible;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0  #095484; 
+      }
+      #form-input{ 
+        font-size: large;
+        margin-left: 25%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        width: 50%;
+      padding: 5px;
+      border-radius: 6px;
+      background-color: #095484;
+      }
+      #form-input:hover {
+        box-shadow: 0 0 20px 0  #095484; 
+
+      
+      }
+      .banner {
+      position: relative;
+      height: 200px; 
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.6); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select{
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      textarea {
+        margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      height: 100px;
+      } 
+      textarea {
+        width: calc(100% - 10px);
+      padding: 5px;
+      } 
+      input, select{
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder{
+      color:#095484;
+      }
+      .item input:hover, textarea:hover, select:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      color:#095484;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #095484;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      } 
+      #enter-btn {
+        font-size: 20px;
+        text-decoration: none;
+        color:#095484;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+      #enter-btn:hover {
+        color:#4286f4 
+      }
+      button {
+        margin-top: 10px;
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #4286f4;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input,.name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      } 
+      } 
+.Navbar {
+    box-shadow: 0 0 6px 0 #095484;
+  background-color: #095484;
+  margin-bottom: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 8px;
+}
+
+.Navbar__Link {
+  padding-left:1%;
+  padding-right:1%;
+  color: white;
+  cursor: pointer;
+  transition-duration: 250ms;
+  text-decoration: none
+} 
+.Navbar__Link:hover { 
+  padding-left:1%;
+  padding-right:1%;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+} 
+
+.Navbar__Link-brand {
+    padding-left:1%;
+  padding-right:1%;
+  color: white;
+  cursor: pointer;
+}
+
+.Navbar__Items {
+  display: flex;
+}
+
+.Navbar__Items--right {
+  margin-left:auto;
+}
+
+.Navbar__Link-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navbar__Items,
+  .Navbar {
+    flex-direction: column;
+  }
+
+  .Navbar__Link:hover {
+    font-size: medium;
+    text-decoration: underline;
+  }
+    
+.Navbar__Items {
+    display:none;
+  }
+    
+.Navbar__Items--right {
+    margin-left:0;
+  }
+    
+.Navbar__ToggleShow {
+    display: flex;
+  }
+    
+.Navbar__Link-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+}
+    </style>
+  </head>
+  <body>
+    <div class="Navbar">
+       <div class="Navbar__Link Navbar__Link-toggle">
+         <i class="fas fa-bars"></i>
+       </div>
+     <nav class="Navbar__Items"> 
+        <a class="Navbar__Link" href="/index.html">
+            New Instance
+         </a>
+       <a class="Navbar__Link" href="/partner.html">
+         Partner Instance Creation and Maintenence
+       </a>
+       <a class="Navbar__Link">
+         Database Restore
+       </a>
+       <a class="Navbar__Link">
+         SBX Instance Refresh
+       </a>
+       <a class="Navbar__Link">
+        SELECT Statement
+       </a> 
+      <div class="Navbar__Link">
+        INSERT, UPDATE and DELETE
+      </div>
+      <a class="Navbar__Link">
+        Data Extraction
+      </a>
+      <a class="Navbar__Link">
+        Instance Decomission
+      </a> 
+      <div class="Navbar__Link">
+        SFTP Request
+      </div>
+      <a class="Navbar__Link">
+        Hosting Assistance
+      </a>
+      <a class="Navbar__Link">
+        Training Instance
+      </a>
+     </nav>
+   </div>
+    <div class="testbox">
+    <form id="form" >
+      <div class="banner">
+        <h1>Change Control Templates</h1>
+      </div>
+      <hr/>
+      <fieldset id="fieldSet">
+        <legend>Partner Instance Creation and Maintenence Form</legend>
+        <div class="item">
+            <label for="summary">One Line Summary of Request<span>*</span></label>
+            <textarea name="Summary" id="summary" required></textarea>
+          </div>   
+        <div class="item">
+          <label for="data-center">Data Center<span>*</span></label>
+          <select name="Data Center:" id="data-center" required> 
+            <option value="DFW">DFW (US)</option>
+          </select>
+        </div>
+        <div class="item">
+          <label for="environment">Environment<span>*</span></label>
+          <select name="Environment:" id="environment" required> 
+            <option value="PARTNER">PARTNER (Any Instance Utilized by a Partner Contact)</option>
+          </select>
+        </div>    
+        <div class="item">
+            <label for="customer-url">Destination URL<span>*</span></label>
+            <input id="customer-url" type="text" name="Destination URL(s):" placeholder="comma delimited list of Cert instances to refresh" required/>
+          </div>   
+          <div class="item">
+            <label for="customer-name">Customer Name<span>*</span></label>
+            <input value="NAVEX" id="customer-name" type="text" name="Customer Name:" placeholder="" required/>
+          </div>   
+          <div class="item">
+            <label for="source">Source Database<span>*</span></label>
+            <input value="Master NVD" id="source" type="text" name="Source Database:" placeholder="" required/>
+          </div>     
+          <div class="item">
+            <label for="address">Edition Type<span>*</span></label>
+            <select id="edition-type" type="text" name="Edition Type:" placeholder="" required> 
+                <option value="" selected disabled hidden>Select an Option</option>
+                <option value="Enterprise">Enterprise</option>
+                <option value="Standard">Standard</option>
+                <option value="Point Solution">Point Solution</option> 
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="due-date">Requested Due Date<span>*</span></label>
+            <input id="due-date" type="text" name="Due Date:" placeholder="MM/DD/YYYY" required/>
+          </div>   
+          <div class="item">
+            <label for="priority">Priority/Urgency<span>*</span></label>
+            <select id="priority" type="text" name="Priority:" placeholder="" required> 
+                <option value="" selected disabled hidden>Select an Option</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Mediuum</option>
+                <option value="High">High</option> 
+                <option value="Critical">Critical</option> 
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="escalated">Is the Request Escalated?<span>*</span></label>
+            <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required> 
+                <option value="" selected disabled hidden>Select an Option</option>
+                <option value="Yes">Yes</option>
+                <option value="Yes">No</option>
+            </select> 
+          </div>   
+          <div class="item">
+            <label for="approved">Change Control Approved By?</label>
+            <input id="approved" type="text" name="Change Control Approved By:" placeholder="Leave Blank for Initial Review" />
+          </div>   
+          <div class="item">
+            <label for="explanation">Explanation of Request<span>*</span></label>
+            <textarea name="Explanation of Request:" id="explanation" placeholder="What is the specific request and who are we setting the instance up for? Anything extra or unique about this request?" required></textarea>
+          </div>   
+      </fieldset> 
+      <input id="form-input" style="cursor:pointer;color: white; text-align: center; height: 100px;" type="submit" value="Enter">
+    </form>
+    </div>
+    <div style="display: flex; justify-content:center; align-items:center"> <a id="enter-btn" target= "_blank" href="https://confluence.navexglobal.com/display/SUP/New+Instance+Creation">--Link to Confluence Documentation--</a></div>
+    <div id="clipboard">
+        <div id="clip-div">
+    <div id="summary-submission" style="text-align: center; visibility: hidden;">
+    <h2 class="field" id="summary-field" style="font-size: 20px; font-weight: 800; visibility: hidden;">- Summary Field -</h2> 
+    </div>
+    <div id="submission" style="text-align:center; visibility: hidden;">
+        <h2 class="field"  id="description-field" style="font-size: 20px;  font-weight: 800; visibility: hidden;"> -Description Field -</h2> 
+    </div>
+    <div id="clear" style="text-align: center;">
+        <button id="clear-button" style="visibility: hidden;">Clear</button>
+    </div>
+</div>
+</div >
+<div style="display:flex; justify-content:center; align-items:center">
+    
+</div>
+    <script src="partner.js"></script> 
+  </body>
+</html

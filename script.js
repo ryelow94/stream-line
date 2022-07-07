@@ -6,6 +6,17 @@ var summaryField = document.getElementById("summary-submission");
 var sumh2 = document.getElementById("summary-field");
 var desh2 = document.getElementById("description-field");
 var field = document.getElementById("submission");
+document.querySelector('.Navbar__Link-toggle')
+  .addEventListener('click', classToggle); 
+
+function classToggle() {
+  const navs = document.querySelectorAll('.Navbar__Items')
+  
+  navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+}
+
+document.querySelector('.Navbar__Link-toggle')
+  .addEventListener('click', classToggle); 
 
 function handleSubmit(event) {
   arr = [];
@@ -140,8 +151,6 @@ button.onclick = async () => {
   button.innerText = "Copy to Clipboard";
   clearButton.innerText = "Clear"; 
 };
-
- 
 
 var infoForm = document.getElementById("form");
 infoForm.addEventListener("submit", handleSubmit);

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "chromedriver": "^103.0.0",
+    "node-html-parser": "^5.3.3",
     "selenium-webdriver": "^4.3.0"
   }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Change Control Info Creator</title>
+    <title>Change Control</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,6 +21,7 @@
       legend { 
       color: #fff;
       background-color: #095484;
+      box-shadow: 0 0 6px 0 #095484;
       padding: 3px 5px;
       font-size: 20px;
       }
@@ -180,14 +181,14 @@
       margin-top: 10px;
       text-align: center;
       } 
-      a {
+      #enter-btn {
         font-size: 20px;
         text-decoration: none;
         color:#095484;
         margin-top: 25px;
         margin-bottom: 25px;
       }
-      a:hover {
+      #enter-btn:hover {
         color:#4286f4 
       }
       button {
@@ -218,15 +219,136 @@
       .name-item div label {
       display:block;
       padding-bottom:5px;
-      }
-      }
+      } 
+      } 
+.Navbar {
+  box-shadow: 0 0 6px 0 #095484;
+  background-color: #095484;
+  margin-bottom: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 8px;
+}
+
+ .Navbar__Link {
+  padding-left:1%;
+  padding-right:1%;
+  color: white;
+  cursor: pointer;
+  transition-duration: 250ms;
+  text-decoration: none;
+} 
+ .Navbar__Link:hover {
+  padding-left:1%;
+  padding-right:1%;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+} 
+
+/* .Navbar__Link-brand {
+  padding-left:1%;
+  padding-right:1%;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+} */
+
+.Navbar__Items {
+  display: flex;
+}
+
+.Navbar__Items--right {
+  margin-left:auto;
+}
+
+.Navbar__Link-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navbar__Items,
+  .Navbar {
+    flex-direction: column;
+  }
+
+  .Navbar__Link:hover {
+    font-size: medium;
+    text-decoration: underline;
+  }
+    
+.Navbar__Items {
+    display:none;
+  }
+    
+.Navbar__Items--right {
+    margin-left:0;
+  }
+    
+.Navbar__ToggleShow {
+    display: flex;
+  }
+    
+.Navbar__Link-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+}
     </style>
   </head>
   <body>
+    <div class="Navbar">
+       <div class="Navbar__Link Navbar__Link-toggle">
+         <i class="fas fa-bars"></i>
+       </div>
+     <nav class="Navbar__Items">
+      <a class="Navbar__Link" href="/index.html">
+        New Instance
+     </a>
+       <a class="Navbar__Link" href="/partner.html">
+         Partner Instance Creation and Maintenence
+       </a>
+       <a class="Navbar__Link">
+         Database Restore
+       </a>
+       <a class="Navbar__Link">
+         SBX Instance Refresh
+       </a>
+       <a class="Navbar__Link">
+        SELECT Statement
+       </a> 
+      <a class="Navbar__Link">
+        INSERT, UPDATE and DELETE
+      </a>
+      <a class="Navbar__Link">
+        Data Extraction
+      </a>
+      <div class="Navbar__Link">
+        Instance Decomission
+      </div> 
+      <div class="Navbar__Link">
+        SFTP Request
+      </div>
+      <a class="Navbar__Link">
+        Hosting Assistance
+      </a>
+      <a class="Navbar__Link">
+        Training Instance
+      </a>
+     </nav>
+   </div>
     <div class="testbox">
     <form id="form" >
       <div class="banner">
-        <h1>Create New Instance Template</h1>
+        <h1>Change Control Templates</h1>
       </div>
       <hr/>
       <fieldset id="fieldSet">
@@ -296,10 +418,10 @@
             <label for="priority">Priority/Urgency<span>*</span></label>
             <select id="priority" type="text" name="Priority:" placeholder="" required> 
                 <option value="" selected disabled hidden>Select an Option</option>
-                <option value="Enterprise">Low</option>
-                <option value="Standard">Mediuum</option>
-                <option value="Point Solution">High</option> 
-                <option value="Point Solution">Critical</option> 
+                <option value="Low">Low</option>
+                <option value="Medium">Mediuum</option>
+                <option value="High">High</option> 
+                <option value="Critical">Critical</option> 
             </select> 
           </div>   
           <div class="item">
@@ -322,7 +444,7 @@
       <input id="form-input" style="cursor:pointer;color: white; text-align: center; height: 100px;" type="submit" value="Enter">
     </form>
     </div>
-    <div style="display: flex; justify-content:center; align-items:center"> <a target= "_blank" href="https://confluence.navexglobal.com/display/SUP/New+Instance+Creation">--Link to Confluence Documentation--</a></div>
+    <div style="display: flex; justify-content:center; align-items:center"> <a id="enter-btn" target= "_blank" href="https://confluence.navexglobal.com/display/SUP/New+Instance+Creation">--Link to Confluence Documentation--</a></div>
     <div id="clipboard">
         <div id="clip-div">
     <div id="summary-submission" style="text-align: center; visibility: hidden;">
