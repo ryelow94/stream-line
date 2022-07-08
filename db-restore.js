@@ -6,6 +6,7 @@ var summaryField = document.getElementById("summary-submission");
 var sumh2 = document.getElementById("summary-field");
 var desh2 = document.getElementById("description-field");
 var field = document.getElementById("submission");
+var copied = document.createElement("p")
 document
   .querySelector(".Navbar__Link-toggle")
   .addEventListener("click", classToggle);
@@ -150,7 +151,7 @@ clearButton.onclick = () => {
   newInput.setAttribute("type", "submit");
   newInput.setAttribute("value", "Enter");
   newInput.style.cursor = "pointer";
-  newInput.style.color = "#4286f4";
+  newInput.style.color = "#ffff";
   newInput.style.textAlign = "center";
   newInput.style.height = "100px";
   var fieldSet = document.getElementById("fieldSet");
@@ -158,16 +159,20 @@ clearButton.onclick = () => {
   clearButton.style.visibility = "hidden";
   console.log(arr);
   clipboard.style.visibility = "hidden";
+  copied.remove()
 };
 button.onclick = async () => {
   var clip = document.getElementById("clipboard");
   button.innerText = "";
   clearButton.innerText = "";
   var clipText = clip.innerText;
-  console.log(clipText);
   await navigator.clipboard.writeText(clipText);
   button.innerText = "Copy to Clipboard";
   clearButton.innerText = "Clear";
+  copied.textContent="--copied to clipboard--"
+  copied.style.color="green"
+  copied.style.fontWeight="700"
+  clearButton.after(copied)
 };
 
 var infoForm = document.getElementById("form");
