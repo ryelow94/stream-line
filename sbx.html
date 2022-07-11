@@ -356,7 +356,7 @@
       </div>
       <hr/>
       <fieldset id="fieldSet">
-        <legend>New Instance Form</legend>
+        <legend>Sandbox Instance Refresh</legend>
         <div class="item">
             <label for="summary">One Line Summary of Request<span>*</span></label>
             <textarea name="Summary" id="summary" required></textarea>
@@ -386,34 +386,41 @@
           </select>
         </div>    
         <div class="item">
-            <label for="customer-url">Customer URL<span>*</span></label>
-            <input id="customer-url" type="text" name="Customer URL:" placeholder="https://customer-url.keylightgrc.com/" required/>
+            <label for="source">Source Instance/URL<span>*</span></label>
+            <input id="source" type="text" name="Source Instance/URL:" placeholder="https://customer-url.keylightgrc.com/" required/>
+          </div>   
+          <div class="item">
+            <label for="destination">Destination Instance/URL<span>*</span></label>
+            <input id="source" type="text" name="Destination Instance/URL:" placeholder="https://customer-url.keylightgrc.com/" required/>
           </div>   
           <div class="item">
             <label for="customer-name">Customer Name<span>*</span></label>
             <input id="customer-name" type="text" name="Customer Name:" placeholder="" required/>
-          </div>   
+          </div>  
           <div class="item">
-            <label for="source">Source Instance/Database<span>*</span></label>
-            <input id="source" type="text" name="Source Instance/Database:" placeholder="" required/>
-          </div>   
+            <label for="sbx-refresh">Sandbox Refresh #: # of 4 of YYYY<span>*</span></label>
+            <input id="sbx-refresh" type="text" name="Sandbox Refresh #: # of 4 of YYYY:" placeholder="" required/>
+          </div>  
           <div class="item">
-            <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
-            <select id="purge-nvd" type="text" name="Purge NVD Data?" placeholder="" required> 
+            <label for="purge-nvd">Document Purge Requested?<span>*</span></label>
+            <select id="purge-nvd" type="text" name="Document Purge Requested?" placeholder="" required> 
                 <option value="" selected disabled hidden>Select an Option</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select> 
           </div>   
           <div class="item">
-            <label for="address">Edition Type<span>*</span></label>
-            <select id="edition-type" type="text" name="Edition Type:" placeholder="" required> 
+            <label for="additional-scripts">Additional Scripts Requested?<span>*</span></label>
+            <select id="additional-scripts" type="text" name="Additional Scripts Requested?" placeholder="" required> 
                 <option value="" selected disabled hidden>Select an Option</option>
-                <option value="Enterprise">Enterprise</option>
-                <option value="Standard">Standard</option>
-                <option value="Point Solution">Point Solution</option> 
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
             </select> 
           </div>   
+          <div class="item">
+            <label for="user-id">User Account ID to Leave Active: <span>*</span></label>
+            <input id="user-id" type="text" name="User Account ID to Leave Active:" placeholder="" required/>
+          </div>
           <div class="item">
             <label for="due-date">Requested Due Date<span>*</span></label>
             <input id="due-date" type="text" name="Due Date:" placeholder="MM/DD/YYYY" required/>
@@ -465,6 +472,6 @@
 <div style="display:flex; justify-content:center; align-items:center">
     
 </div>
-    <script src="script.js"></script> 
+    <script src="sbx.js"></script> 
   </body>
 </html>
