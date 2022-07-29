@@ -20,6 +20,7 @@ document.querySelector('.Navbar__Link-toggle')
   .addEventListener('click', classToggle); 
 
 function handleSubmit(event) {
+  console.log(event.target[5].value)
   arr = [];
   event.preventDefault();
   var pattern =
@@ -31,7 +32,7 @@ function handleSubmit(event) {
   }
   if (!pattern.test(event.target[5].value)) {
     alert("The Destination URL is invalid, please ensure it begins with https://");
-    
+    return
   }
   if (!date_regex.test(event.target[11].value)) {
     alert(
@@ -121,8 +122,6 @@ function handleSubmit(event) {
   }
   console.log(event)
   infoForm.reset();
-  var clip = document.getElementById("clipboard");
-  clip.style.lineHeight = "0.5";
   var enter = document.getElementById("form-input");
   enter.remove();
 }

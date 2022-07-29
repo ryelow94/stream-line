@@ -128,8 +128,6 @@ function handleSubmit(event) {
     num = num + "a";
   }
   infoForm.reset();
-  var clip = document.getElementById("clipboard");
-  clip.style.lineHeight = "0.5";
   var enter = document.getElementById("form-input");
   enter.remove();
 }
