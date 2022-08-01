@@ -20,7 +20,6 @@ document.querySelector('.Navbar__Link-toggle')
   .addEventListener('click', classToggle); 
 
 function handleSubmit(event) {
-  console.log(event.target[5].value)
   arr = [];
   event.preventDefault();
   var pattern =
@@ -30,9 +29,11 @@ function handleSubmit(event) {
     alert("The Source URL is invalid, please ensure it begins with https://");
     return;
   }
+  var pattern =
+    /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
   if (!pattern.test(event.target[5].value)) {
     alert("The Destination URL is invalid, please ensure it begins with https://");
-    return
+    return;
   }
   if (!date_regex.test(event.target[11].value)) {
     alert(
