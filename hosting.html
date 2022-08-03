@@ -336,16 +336,14 @@
       <a class="Navbar__Link" href="dataExtract.html">
         Data Extraction
       </a>
-      <a class="Navbar__Link" href="decom.html">
-        Instance Decomission
-      </a> 
+      <a class="Navbar__Link" href="decom.html">Instance Decomission</a>
       <a class="Navbar__Link" href="sftp.html">
         SFTP Request
       </a>
-      <a class="Navbar__Link" href="training.html">
+      <a class="Navbar__Link" href="hosting.html">
         Hosting Assistance
       </a>
-      <a class="Navbar__Link">
+      <a class="Navbar__Link" href="training.html">
         Training Instance
       </a>
      </nav>
@@ -363,7 +361,7 @@
       </h4>
       <hr/>
       <fieldset id="fieldSet">
-        <legend>Instance Decomission Form</legend>
+        <legend>Request for Hosting Assistance/Research</legend>
         <div class="item">
             <label for="summary">One Line Summary of Request<span>*</span></label>
             <textarea name="Summary" id="summary" required></textarea>
@@ -428,14 +426,18 @@
           <div class="item">
             <label for="priority">Priority/Urgency<span>*</span></label>
             <select id="priority" type="text" name="Priority:" placeholder="" required> 
-                <option value="Low" selected disabled hidden>Select an Option</option>
-                <option value="Low">Low</option> 
+                <option value="" selected disabled hidden>Select an Option</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Mediuum</option>
+                <option value="High">High</option> 
+                <option value="Critical">Critical</option> 
             </select> 
           </div>   
           <div class="item">
             <label for="escalated">Is the Request Escalated?<span>*</span></label>
             <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required> 
-                <option value="No" selected disabled hidden>Select an Option</option>
+                <option value="" selected disabled hidden>Select an Option</option>
+                <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select> 
           </div>   
@@ -468,6 +470,6 @@
 <div style="display:flex; justify-content:center; align-items:center">
     
 </div>
-    <script src="decom.js"></script> 
+    <script src="hosting.js"></script> 
   </body>
 </html>
