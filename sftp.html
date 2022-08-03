@@ -361,71 +361,44 @@
       </h4>
       <hr/>
       <fieldset id="fieldSet">
-        <legend>Sandbox Instance Refresh</legend>
+        <legend>SFTP Request Form</legend>
         <div class="item">
             <label for="summary">One Line Summary of Request<span>*</span></label>
             <textarea name="Summary" id="summary" required></textarea>
           </div>   
+          <div class="item">
+            <label for="client-key">Client Key:<span>*</span></label>
+            <input id="client-key" type="text" name="Client Key:" placeholder="IP-[customer name]" required/>
+          </div>   
         <div class="item">
-          <label for="data-center">Data Center<span>*</span></label>
-          <select name="Data Center:" id="data-center" required> 
-            <option value="" selected disabled hidden>Select an Option</option>
-            <option value="DFW">DFW (US)</option>
-            <option value="FRA">FRA (EU)</option>
-          </select>
-        </div>
-        <div class="item">
-          <label for="environment">Environment<span>*</span></label>
-          <select name="Environment:" id="environment" required> 
-            <option value="" selected disabled hidden>Select an Option</option>
-            <option value="PRD">PRD (Production Customer Instances)</option>
-            <option value="SBX">SBX (Customer Sandbox Instances/QA)</option>
-            <option value="DMO">DMO (Instances Used for Demos by Sales Engineers)</option> 
-            <option value="SUP">SUP (Internal Support Instances)</option>
-            <option value="PERSONAL">PERSONAL (Personal Instances Used by Anybody Outside of Support)</option>
-            <option value="POC">POC (Proof of Concept Instances Used by Sales Engineers)</option>
-            <option value="AD">AD (Advanced Demo Instances Used by Sales Engineers)</option>
-            <option value="PARTNER">PARTNER (Any Instance Utilized by a Partner Contact)</option>
-            <option value="NIC">NIC (Any NAVEX Integration Cloud Instance)</option>
-            <option value="TST">TST (Any Test Instance Set Up for Customer Research)</option>
-          </select>
-        </div>    
-        <div class="item">
-            <label for="source">Source Instance/URL<span>*</span></label>
-            <input id="source" type="text" name="Source Instance/URL:" placeholder="https://customer-url.keylightgrc.com/" required/>
+            <label for="customer-url">Account(s) to EmailL<span>*</span></label>
+            <input id="customer-url" type="text" name="Account(s) to Email:" placeholder="comma delimited accounts here" required/>
           </div>   
           <div class="item">
-            <label for="destination">Destination Instance/URL<span>*</span></label>
-            <input id="destination" type="text" name="Destination Instance/URL:" placeholder="https://customer-url.keylightgrc.com/" required/>
+            <label for="customer-name">IP Addres to Authorize<span>*</span></label>
+            <input id="customer-name" type="text" name="IP Address to Authorize:" placeholder="" required/>
           </div>   
-          <div class="item">
-            <label for="customer-name">Customer Name<span>*</span></label>
-            <input id="customer-name" type="text" name="Customer Name:" placeholder="" required/>
-          </div>  
-          <div class="item">
-            <label for="sbx-refresh">Sandbox Refresh #: # of 4 of YYYY<span>*</span></label>
-            <input id="sbx-refresh" type="text" name="Sandbox Refresh #: # of 4 of YYYY:" placeholder="" required/>
-          </div>  
-          <div class="item">
-            <label for="purge-nvd">Document Purge Requested?<span>*</span></label>
-            <select id="purge-nvd" type="text" name="Document Purge Requested?" placeholder="" required> 
+          <!-- <div class="item">
+            <label for="source">Source Instance/Database<span>*</span></label>
+            <input id="source" type="text" name="Source Instance/Database:" placeholder="" required/>
+          </div>    -->
+          <!-- <div class="item">
+            <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
+            <select id="purge-nvd" type="text" name="Purge NVD Data?" placeholder="" required> 
                 <option value="" selected disabled hidden>Select an Option</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select> 
-          </div>   
-          <div class="item">
-            <label for="additional-scripts">Additional Scripts Requested?<span>*</span></label>
-            <select id="additional-scripts" type="text" name="Additional Scripts Requested?" placeholder="" required> 
+          </div>    -->
+          <!-- <div class="item">
+            <label for="address">Edition Type<span>*</span></label>
+            <select id="edition-type" type="text" name="Edition Type:" placeholder="" required> 
                 <option value="" selected disabled hidden>Select an Option</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="Enterprise">Enterprise</option>
+                <option value="Standard">Standard</option>
+                <option value="Point Solution">Point Solution</option> 
             </select> 
-          </div>   
-          <div class="item">
-            <label for="user-id">User Account ID to Leave Active: <span>*</span></label>
-            <input id="user-id" type="text" name="User Account ID to Leave Active:" placeholder="" required/>
-          </div>
+          </div>    -->
           <div class="item">
             <label for="due-date">Requested Due Date<span>*</span></label>
             <input id="due-date" type="text" name="Due Date:" placeholder="MM/DD/YYYY" required/>
@@ -433,18 +406,14 @@
           <div class="item">
             <label for="priority">Priority/Urgency<span>*</span></label>
             <select id="priority" type="text" name="Priority:" placeholder="" required> 
-                <option value="" selected disabled hidden>Select an Option</option>
+                <option value="Low" selected disabled hidden>Select an Option</option>
                 <option value="Low">Low</option>
-                <option value="Medium">Mediuum</option>
-                <option value="High">High</option> 
-                <option value="Critical">Critical</option> 
             </select> 
           </div>   
           <div class="item">
             <label for="escalated">Is the Request Escalated?<span>*</span></label>
             <select id="escalated" type="text" name="Is the Request Escalated?" placeholder="" required> 
-                <option value="" selected disabled hidden>Select an Option</option>
-                <option value="Yes">Yes</option>
+                <option value="No" selected disabled hidden>Select an Option</option>
                 <option value="No">No</option>
             </select> 
           </div>   
@@ -477,6 +446,6 @@
 <div style="display:flex; justify-content:center; align-items:center">
     
 </div>
-    <script src="sbx.js"></script> 
+    <script src="sftp.js"></script> 
   </body>
 </html>
