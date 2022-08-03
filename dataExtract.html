@@ -372,7 +372,7 @@
         </h4>
         <hr />
         <fieldset id="fieldSet">
-          <legend>New Instance Form</legend>
+          <legend>Data Extraction</legend>
           <div class="item">
             <label for="summary"
               >One Line Summary of Request<span>*</span></label
@@ -441,47 +441,21 @@
               required
             />
           </div>
+         
           <div class="item">
-            <label for="source">Source Instance/Database<span>*</span></label>
-            <input
-              id="source"
-              type="text"
-              name="Source Instance/Database:"
-              placeholder=""
-              required
-            />
-          </div>
-          <div class="item">
-            <label for="purge-nvd">Purge NVD Data?<span>*</span></label>
-            <select
-              id="purge-nvd"
-              type="text"
-              name="Purge NVD Data?"
-              placeholder=""
-              required
-            >
-              <option value="" selected disabled hidden>
-                Select an Option
-              </option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-          </div>
-          <div class="item">
-            <label for="address">Edition Type<span>*</span></label>
+            <label for="address">File Delivery Method<span>*</span></label>
             <select
               id="edition-type"
               type="text"
-              name="Edition Type:"
+              name="File Delivery Method:"
               placeholder=""
               required
             >
               <option value="" selected disabled hidden>
                 Select an Option
               </option>
-              <option value="Enterprise">Enterprise</option>
-              <option value="Standard">Standard</option>
-              <option value="Point Solution">Point Solution</option>
+              <option value="NAVEX SFTP">NAVEX SFTP</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div class="item">
@@ -500,16 +474,13 @@
               id="priority"
               type="text"
               name="Priority:"
-              placeholder=""
+              placeholder="Low"
               required
             >
-              <option value="" selected disabled hidden>
+              <option value="Low" selected disabled hidden>
                 Select an Option
               </option>
               <option value="Low">Low</option>
-              <option value="Medium">Mediuum</option>
-              <option value="High">High</option>
-              <option value="Critical">Critical</option>
             </select>
           </div>
           <div class="item">
@@ -520,13 +491,12 @@
               id="escalated"
               type="text"
               name="Is the Request Escalated?"
-              placeholder=""
+              placeholder="No"
               required
             >
-              <option value="" selected disabled hidden>
+              <option value="No" selected disabled hidden>
                 Select an Option
               </option>
-              <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
@@ -603,6 +573,6 @@
     <div
       style="display: flex; justify-content: center; align-items: center"
     ></div>
-    <script src="script.js"></script>
+    <script src="dataExtract.js"></script>
   </body>
 </html>
